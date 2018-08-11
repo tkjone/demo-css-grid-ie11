@@ -1,2 +1,8 @@
 # osx
 .DS_Store
+
+# dev
+node_modules
+
+# app artifacts
+app/build.css

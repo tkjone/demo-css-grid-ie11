@@ -1,0 +1,17 @@
+{
+  "name": "demo-css-grid-ie11",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "tkjone",
+  "license": "MIT",
+  "scripts": {
+    "build-css": "postcss ./app/styles.css -o ./app/build.css",
+    "watch-css": "postcss ./app/styles.css -o ./app/build.css --watch",
+    "serve": "http-server"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.1.0",
+    "http-server": "^0.11.1",
+    "postcss-cli": "^6.0.0"
+  }
+}
