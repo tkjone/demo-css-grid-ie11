@@ -4,42 +4,49 @@ body {
   margin: 0;
 }
 
-:root {
+/* :root {
   --header-height: 30px;
-}
+} */
 
 .app {
   display: grid;
-  grid-template-rows: var(--header-height) auto;
-  grid-template-columns: 300px 1fr;
+  grid-template:
+    'app-grid__header app-grid__header' 30px
+    'app-grid__sidebar app-grid__main' auto /
+    300px 1fr;
   height: 100vh;
 }
 
 .header {
   background-color: blue;
-  grid-column: 1 / span 3;
-
-  grid-row: 1;
+  grid-area: app-grid__header;
 }
 
 .sidebar {
   background-color: red;
+  grid-area: app-grid__sidebar;
 }
 
 .main {
   background-color: green;
+  grid-area: app-grid__main;
 }
 
 .panel {
   display: grid;
+  grid-template: 'app-grid-panel' 1fr / 1fr;
   height: calc(100vh - 30px);
 }
 
 .panel-body {
+  display: grid;
+  grid-area: app-grid-panel;
+  grid-template: 'app-grid-panel-body' 1fr / 1fr;
   overflow: hidden;
 }
 
 .feature-screen {
+  grid-area: app-grid-panel-body;
   padding: 20px;
 }
 
@@ -52,18 +59,16 @@ body {
 }
 
 .toolbar {
-  margin-bottom: 490px;
-}
-
-.main-content {
-  height: 200px;
-  background-color: white;
+  /* margin-bottom: 490px; */
 }
 
 table {
   display: grid;
-  grid-template-rows: var(--header-height) auto;
+  grid-template:
+    'table-grid__header' 30px
+    'table-grid__body' auto / 1fr;
   background-color: white;
+  height: 200px;
 }
 
 caption {
@@ -79,12 +84,14 @@ caption {
 
 thead {
   display: block;
+  grid-area: table-grid__header;
   overflow: auto;
   background-color: gray;
 }
 
 tbody {
   display: block;
+  grid-area: table-grid__body;
   overflow: auto;
   height: 170px;
 }
