@@ -53,7 +53,14 @@ body {
 }
 
 .feature-screen {
+  display: grid;
   grid-area: app-grid-panel-body;
+  grid-template:
+    'feature-screen-column-a feature-screen-column-a feature-screen-column-a feature-screen-column-a' 1fr
+    'feature-screen-column-b feature-screen-column-b feature-screen-column-b feature-screen-column-b' 1fr
+    'feature-screen-column-c feature-screen-column-c feature-screen-column-c feature-screen-column-c' 1fr
+    'feature-screen-column-d feature-screen-column-d feature-screen-column-d feature-screen-column-d' 1fr /
+    1fr 1fr 1fr 1fr;
   padding: 20px;
 }
 
@@ -61,12 +68,20 @@ body {
 .search,
 .toolbar {
   height: 50px;
-  margin-bottom: 20px;
   background-color: white;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
+.breadcrumbs {
+  grid-area: feature-screen-column-a;
+}
+
+.search {
+  grid-area: feature-screen-column-b;
+}
+
 .toolbar {
+  grid-area: feature-screen-column-c;
 }
 
 /* CSS Flexbox - Table
@@ -74,6 +89,7 @@ body {
 
 table {
   display: flex;
+  grid-area: feature-screen-column-d;
   flex-direction: column;
   height: 200px;
   width: 100%;
@@ -125,4 +141,27 @@ th {
   border: 1px solid #eff2f6;
   background-color: #eff2f6;
   border-radius: 4px;
+}
+
+/* Menu
+ * --------------------------------------------------------------------------- */
+
+.menu__container {
+  position: relative;
+}
+
+.column-skeleton__btn {
+  cursor: pointer;
+}
+
+.menu {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  position: absolute;
+  padding: 10px;
+  background-color: white;
+  display: none;
+}
+
+.menu--open {
+  display: block;
 }

@@ -40,51 +40,101 @@
               <tbody>
                 <tr>
                   <td><div class="column-skeleton"></div></td>
-                  <td><div class="column-skeleton"></div></td>
-                  <td><div class="column-skeleton"></div></td>
-                </tr>
-                <tr>
-                  <td><div class="column-skeleton"></div></td>
-                  <td><div class="column-skeleton"></div></td>
-                  <td><div class="column-skeleton"></div></td>
-                </tr>
-                <tr>
-                  <td><div class="column-skeleton"></div></td>
-                  <td><div class="column-skeleton"></div></td>
+                  <td>
+                    <div class="menu__container">
+                      <button class="column-skeleton column-skeleton__btn"></button>
+                      <div class="menu">MENU</div>
+                    </div>
+                  </td>
                   <td><div class="column-skeleton"></div></td>
                 </tr>
                 <tr>
                   <td><div class="column-skeleton"></div></td>
                   <td><div class="column-skeleton"></div></td>
-                  <td><div class="column-skeleton"></div></td>
+                  <td>
+                    <div class="menu__container">
+                      <button class="column-skeleton column-skeleton__btn"></button>
+                      <div class="menu">MENU</div>
+                    </div>
+                  </td>
                 </tr>
                 <tr>
-                  <td><div class="column-skeleton"></div></td>
-                  <td><div class="column-skeleton"></div></td>
-                  <td><div class="column-skeleton"></div></td>
-                </tr>
-                <tr>
-                  <td><div class="column-skeleton"></div></td>
-                  <td><div class="column-skeleton"></div></td>
-                  <td><div class="column-skeleton"></div></td>
-                </tr>
-                <tr>
-                  <td><div class="column-skeleton"></div></td>
-                  <td><div class="column-skeleton"></div></td>
-                  <td><div class="column-skeleton"></div></td>
-                </tr>
-                <tr>
-                  <td><div class="column-skeleton"></div></td>
+                  <td>
+                    <div class="menu__container">
+                      <button class="column-skeleton column-skeleton__btn"></button>
+                      <div class="menu">MENU</div>
+                    </div>
+                  </td>
                   <td><div class="column-skeleton"></div></td>
                   <td><div class="column-skeleton"></div></td>
                 </tr>
                 <tr>
                   <td><div class="column-skeleton"></div></td>
+                  <td>
+                    <div class="menu__container">
+                      <button class="column-skeleton column-skeleton__btn"></button>
+                      <div class="menu">MENU</div>
+                    </div>
+                  </td>
+                  <td><div class="column-skeleton"></div></td>
+                </tr>
+                <tr>
+                  <td><div class="column-skeleton"></div></td>
+                  <td><div class="column-skeleton"></div></td>
+                  <td>
+                    <div class="menu__container">
+                      <button class="column-skeleton column-skeleton__btn"></button>
+                      <div class="menu">MENU</div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><div class="column-skeleton"></div></td>
+                  <td>
+                    <div class="menu__container">
+                      <button class="column-skeleton column-skeleton__btn"></button>
+                      <div class="menu">MENU</div>
+                    </div>
+                  </td>
+                  <td><div class="column-skeleton"></div></td>
+                </tr>
+                <tr>
+                  <td><div class="column-skeleton"></div></td>
+                  <td><div class="column-skeleton"></div></td>
+                  <td>
+                    <div class="menu__container">
+                      <button class="column-skeleton column-skeleton__btn"></button>
+                      <div class="menu">MENU</div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="menu__container">
+                      <button class="column-skeleton column-skeleton__btn"></button>
+                      <div class="menu">MENU</div>
+                    </div>
+                  </td>
                   <td><div class="column-skeleton"></div></td>
                   <td><div class="column-skeleton"></div></td>
                 </tr>
                 <tr>
                   <td><div class="column-skeleton"></div></td>
+                  <td>
+                    <div class="menu__container">
+                      <button class="column-skeleton column-skeleton__btn"></button>
+                      <div class="menu">MENU</div>
+                    </div>
+                  </td>
+                  <td><div class="column-skeleton"></div></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="menu__container">
+                      <button class="column-skeleton column-skeleton__btn"></button>
+                      <div class="menu">MENU</div>
+                    </div>
+                  </td>
                   <td><div class="column-skeleton"></div></td>
                   <td><div class="column-skeleton"></div></td>
                 </tr>
@@ -96,5 +146,23 @@
     </div>
   </div>
 
+<script>
+var buttons = document.querySelectorAll('.column-skeleton__btn');
+
+function handleClick(e) {
+  var isMenuOpen = this.nextElementSibling.classList.contains('menu--open');
+
+  if (!isMenuOpen) {
+    this.nextElementSibling.classList.add('menu--open');
+  } else {
+    this.nextElementSibling.classList.remove('menu--open');
+  }
+}
+
+// IE11 compat loop - otherwise we would use forEach
+for (var i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener('click', handleClick);
+}
+</script>
 </body>
 </html>
