@@ -1,12 +1,17 @@
-/* reset base styles */
+/* reset base styles
+ * ---------------------------------------------------------------------------*/
+
+/* removes scrollbar on IE11 - resolves weird table style column indent issue */
+html {
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
 
 body {
   margin: 0;
 }
 
-/* :root {
-  --header-height: 30px;
-} */
+/* CSS Grid - App Structure
+ * ---------------------------------------------------------------------------*/
 
 .app {
   display: grid;
@@ -18,17 +23,19 @@ body {
 }
 
 .header {
-  background-color: blue;
+  background-color: #ffffff;
   grid-area: app-grid__header;
+  border-bottom: 1px solid #f2f3f4;
 }
 
 .sidebar {
-  background-color: red;
+  background-color: #ffffff;
   grid-area: app-grid__sidebar;
+  border-right: 1px solid #f2f3f4;
 }
 
 .main {
-  background-color: green;
+  background-color: #f7f8f9;
   grid-area: app-grid__main;
 }
 
@@ -56,19 +63,22 @@ body {
   height: 50px;
   margin-bottom: 20px;
   background-color: white;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 .toolbar {
-  /* margin-bottom: 490px; */
 }
 
+/* CSS Flexbox - Table
+ * ---------------------------------------------------------------------------*/
+
 table {
-  display: grid;
-  grid-template:
-    'table-grid__header' 30px
-    'table-grid__body' auto / 1fr;
-  background-color: white;
+  display: flex;
+  flex-direction: column;
   height: 200px;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 caption {
@@ -82,20 +92,37 @@ caption {
   border: 0;
 }
 
-thead {
+thead,
+tbody {
   display: block;
-  grid-area: table-grid__header;
-  overflow: auto;
-  background-color: gray;
+  padding: 0 5px;
 }
 
 tbody {
-  display: block;
-  grid-area: table-grid__body;
-  overflow: auto;
-  height: 170px;
+  flex: 1;
+  overflow-y: scroll;
 }
 
+tr {
+  width: 100%;
+  display: flex;
+  padding: 5px 0;
+}
+
+td,
 th {
   text-align: left;
+  display: block;
+  flex: 1;
+}
+
+/* Table Data - Loading Skeleton
+ * --------------------------------------------------------------------------- */
+
+.column-skeleton {
+  height: 15px;
+  width: 180px;
+  border: 1px solid #eff2f6;
+  background-color: #eff2f6;
+  border-radius: 4px;
 }
