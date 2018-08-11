@@ -1,0 +1,93 @@
+/* reset base styles */
+
+body {
+  margin: 0;
+}
+
+:root {
+  --header-height: 30px;
+}
+
+.app {
+  display: grid;
+  grid-template-rows: var(--header-height) auto;
+  grid-template-columns: 300px 1fr;
+  height: 100vh;
+}
+
+.header {
+  background-color: blue;
+  grid-column: 1 / span 3;
+  grid-row: 1;
+}
+
+.sidebar {
+  background-color: red;
+}
+
+.main {
+  background-color: green;
+}
+
+.panel {
+  display: grid;
+  height: calc(100vh - var(--header-height));
+}
+
+.panel-body {
+  overflow: hidden;
+}
+
+.feature-screen {
+  padding: 20px;
+}
+
+.breadcrumbs,
+.search,
+.toolbar {
+  height: 50px;
+  margin-bottom: 20px;
+  background-color: white;
+}
+
+.toolbar {
+  margin-bottom: 490px;
+}
+
+.main-content {
+  height: 200px;
+  background-color: white;
+}
+
+table {
+  display: grid;
+  grid-template-rows: var(--header-height) auto;
+  background-color: white;
+}
+
+caption {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+thead {
+  display: block;
+  overflow: auto;
+  background-color: gray;
+}
+
+tbody {
+  display: block;
+  overflow: auto;
+  height: 170px;
+}
+
+th {
+  text-align: left;
+}
