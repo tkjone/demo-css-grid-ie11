@@ -28,7 +28,7 @@ Demo app illustrating how we can go about using CSS grid with IE11. The goal is 
 - Serve the app
 
   ```bash
-  yarn server
+  yarn serve
   ```
 
   > We serve the app so you can access it on your VM.
